@@ -19,7 +19,14 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('webit_accounting_payment_simple');
-
+// 		$rootNode->children()
+// 			->arrayNode('client')->applyDefaultIfNotSet()
+// 				->children()
+// 					->scalarNode('pos_id')->defaultNull()->end()
+// 					->scalarNode('private_key')->defaultNull()->end()
+// 				->end()
+// 			->end()
+// 		->end();
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
         // more information on that topic.

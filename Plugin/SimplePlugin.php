@@ -110,10 +110,12 @@ class SimplePlugin extends AbstractPlugin
         $transaction->setReferenceNumber($data->get('deposit_symbol'));
         $transaction->setProcessedAmount($data->get('amount'));
         
-        $date = $data->get('deposit_date');
-        if($date) {
-        	$date = \DateTime::createFromFormat('Y-m-d H:i:s', $date);
-        	$this->forceUpdateDate($transaction, $date);
+        if($data->has('deposit_date')) {
+        	$date = $data->get('deposit_date');
+        	if($date) {
+        		$date = \DateTime::createFromFormat('Y-m-d H:i:s', $date);
+        		$this->forceUpdateDate($transaction, $date);
+        	}	
         }
         
         $transaction->setResponseCode(PluginInterface::RESPONSE_CODE_SUCCESS);
@@ -153,11 +155,13 @@ class SimplePlugin extends AbstractPlugin
 
         $transaction->setReferenceNumber($data->get('deposit_symbol'));
         $transaction->setProcessedAmount($data->get('amount'));
-        
-        $date = $data->get('deposit_date');
-        if($date) {
-        	$date = \DateTime::createFromFormat('Y-m-d H:i:s', $date);
-        	$this->forceUpdateDate($transaction, $date);
+    
+        if($data->has('deposit_date')) {
+        	$date = $data->get('deposit_date');
+        	if($date) {
+        		$date = \DateTime::createFromFormat('Y-m-d H:i:s', $date);
+        		$this->forceUpdateDate($transaction, $date);
+        	}	
         }
         
         $transaction->setResponseCode(PluginInterface::RESPONSE_CODE_SUCCESS);

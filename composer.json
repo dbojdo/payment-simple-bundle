@@ -9,13 +9,14 @@
 	],
 	"keywords" : [
 		"web-it",
-		"order bundle",
+		"payment",
+		"cod",
+		"bank transfer",
+		"cash",
 		"e-commerce"
 	],
 	"homepage" : "http://www.web-it.eu",
-	"license" : [
-		"Web-IT"
-	],
+	"license" : "Web-IT",
 	"require" : {
 		"php" : ">=5.3.2",
 		"jms/payment-core-bundle" : "dev-master"
